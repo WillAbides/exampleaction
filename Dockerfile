@@ -5,7 +5,8 @@ FROM alpine:3.10
 RUN apk --no-cache add curl && \
     curl -sOL https://github.com/WillAbides/semver-next/releases/download/v0.8.0/semver-next_0.8.0_linux_amd64.tar.gz && \
     tar -xzf semver-next_0.8.0_linux_amd64.tar.gz && \
-    rm semver-next_0.8.0_linux_amd64.tar.gz
+    rm semver-next_0.8.0_linux_amd64.tar.gz && \
+    mv semver-next /usr/local/bin/semver-next
 
 COPY entrypoint.sh /entrypoint.sh
 

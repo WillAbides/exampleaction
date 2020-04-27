@@ -2,15 +2,22 @@
 name: 'Hello World'
 description: 'Greet someone and record the time'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  max_bump:
+    description: maximum version to bump. Valid values are MAJOR, MINOR and PATCH
     required: true
-    default: 'World'
+    default: MAJOR
+  min_bump:
+    description: maximum version to bump. Valid values are MAJOR, MINOR and PATCH
+    required: true
+    default: PATCH
+  token:
+    description: 'a token...for github'
+    default: ${{ github.token }}
+    required: true
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  next_version:
+    description: 'the result of semver-next'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.who }}
+
