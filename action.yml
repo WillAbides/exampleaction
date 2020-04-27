@@ -10,6 +10,16 @@ inputs:
     description: maximum version to bump. Valid values are MAJOR, MINOR and PATCH
     required: true
     default: PATCH
+  previous_release_tag:
+    description: foo
+    required: false
+  previous_release_version:
+    description: foo
+    required: false
+  allow_first_release:
+    description: foo
+    required: false
+    default: "false"
   token:
     description: 'a token...for github'
     default: ${{ github.token }}
